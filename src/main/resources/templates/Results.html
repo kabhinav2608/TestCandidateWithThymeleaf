@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Results</title>
+    <style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table class="pure-table pure-table-bordered">
+
+    <tr>
+        <th><b>User Id</b></th>
+        <th><b>Full Name</b></th>
+        <th><b>Designation</b></th>
+        <th><b>Service</b></th>
+        <th><b>Reporting Manager</b></th>
+    </tr>
+
+    <tr th:each="i : ${allCandidates}">
+        <td th:utext="${i.userId}"></td>
+        <td th:utext="${i.fullName}"></td>
+        <td th:utext="${i.designation}"></td>
+        <td th:utext="${i.service}"></td>
+        <td th:utext="${i.reportingManager}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
